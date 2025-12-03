@@ -1,4 +1,4 @@
-package foreach;
+package com.foreach;
 
 import java.util.Scanner;
 

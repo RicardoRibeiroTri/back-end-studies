@@ -1,4 +1,4 @@
-package vetores;
+package com.arrays;
 
 public class MultiplicarPor2 {
 

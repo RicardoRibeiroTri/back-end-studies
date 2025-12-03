@@ -1,4 +1,4 @@
-package vetores;
+package com.arrays;
 
 import java.util.Scanner;
 
