@@ -27,6 +27,5 @@ public class Main {
                 seller.calculateLiquidWage(incomeTax);
                 break;
         }
-
     }
 }
