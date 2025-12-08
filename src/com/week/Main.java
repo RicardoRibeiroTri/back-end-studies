@@ -11,21 +11,10 @@ public class Main {
 
         while (true) {
             WeekDays.daysOptions();
-            while (true) {
-                String number = sc.nextLine();
-
-                today = WeekDays.fromNumber(number);
-
-                if (today == null) {
-                    System.out.println("Invalid day, try again");
-                    continue;
-                } else {
-                    break;
-                }
-            }
-
+                today = WeekDays.fromNumber();
             System.out.println(today.mensage());
         }
     }
 }
+
 

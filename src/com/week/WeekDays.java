@@ -1,5 +1,7 @@
 package com.week;
 
+import java.util.Scanner;
+
 public enum WeekDays {
 
     MONDAY {
@@ -47,13 +49,14 @@ public enum WeekDays {
     SUNDAY {
         @Override
         public String mensage() {
-            System.out.println("Rest day");;
+            System.out.println("Rest day");
+            ;
             return null;
         }
     };
 
     public String mensage() {
-        System.out.println("Default mensage");;
+        System.out.println("Default mensage");
         return null;
     }
 
@@ -62,24 +65,42 @@ public enum WeekDays {
                 "\n 0. Quit" +
                 "\n 1 Monday" +
                 "\n 2 Tuesday" +
-                "\n 3 Weekday" +
+                "\n 3 Wednesday" +
                 "\n 4 Thursday" +
                 "\n 5 Friday" +
                 "\n 6 Saturday" +
                 "\n 7 Sunday");
     }
 
-    public static WeekDays fromNumber(String number) {
-        switch (number) {
-            case "0": System.exit(0);
-            case "1": return MONDAY;
-            case "2": return TUESDAY;
-            case "3": return WEDNESDAY;
-            case "4": return THURSDAY;
-            case "5": return FRIDAY;
-            case "6": return SATURDAY;
-            case "7": return SUNDAY;
-            default: return null;
+    public static WeekDays fromNumber() {
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String number = sc.nextLine();
+
+            if (number.length() != 1 || !Character.isDigit(number.charAt(0))) {
+                System.out.println("Invalid element, try again");
+                continue;
+            }
+
+            int option = Integer.parseInt(number);
+
+            switch (option) {
+                case 0:
+                    System.out.println("Always come back");
+                    System.exit(0);
+                case 1: return MONDAY;
+                case 2: return TUESDAY;
+                case 3: return WEDNESDAY;
+                case 4: return THURSDAY;
+                case 5: return FRIDAY;
+                case 6: return SATURDAY;
+                case 7: return SUNDAY;
+                default:
+                    System.out.println("Invalid day, try again");
+                    continue;
+            }
         }
     }
 }
+
